@@ -22,3 +22,5 @@
   expect(resources.get('notExists', 'firstName')).toEqual('firstName');
   expect(resources.get('en', 'ssn')).toEqual('ssn');
 ```
+
+For all other behaviour details read unit tests.
