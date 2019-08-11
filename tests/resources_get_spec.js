@@ -64,6 +64,15 @@ describe('resources get', () => {
     expect(get).toThrow(new TypeError('dict must be not empty string'));
   });
 
+  it('should throw if dict is whitespaces string', () => {
+
+    const get = () => {
+      resources.get(' ', 'key');
+    };
+
+    expect(get).toThrow(new TypeError('dict must be not empty string'));
+  });
+
   it('should throw if key is not string', () => {
 
     const get = () => {
@@ -77,6 +86,15 @@ describe('resources get', () => {
 
     const get = () => {
       resources.get('ru', '');
+    };
+
+    expect(get).toThrow(new TypeError('key must be not empty string'));
+  });
+
+  it('should throw if key is whitespaces string', () => {
+
+    const get = () => {
+      resources.get('ru', ' ');
     };
 
     expect(get).toThrow(new TypeError('key must be not empty string'));
